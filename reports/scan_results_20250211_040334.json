@@ -1,0 +1,268 @@
+[
+  {
+    "target": "juice-shop",
+    "description": "OWASP Juice Shop - Modern Vulnerable Web App",
+    "url": "http://172.20.0.5:3000",
+    "findings": {
+      "total_vulnerabilities": 1,
+      "severity_breakdown": {
+        "Unknown": 1
+      },
+      "detailed_findings": [
+        {
+          "vulnerability_type": "Wapiti: Content Security Policy Configuration",
+          "severity": "Unknown",
+          "description": "URL: /\nParameter: \nDescription: Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks.\nDetails: CSP is not set\n\nHTTP Request:\nGET / HTTP/1.1\nhost: 172.20.0.5:3000\nconnection: keep-alive\nuser-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0\naccept-language: en-US\naccept-encoding: gzip, deflate, br\naccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\n\nCURL Command:\ncurl \"http://172.20.0.5:3000/\"",
+          "affected_component": "/",
+          "remediation": "Solution: Configuring Content Security Policy involves adding the Content-Security-Policy HTTP header to a web page and giving it values to control what resources the user agent is allowed to load for that page.\nReference: {'Mozilla: Content Security Policy (CSP)': 'https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP', 'OWASP: Content Security Policy Cheat Sheet': 'https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html', 'OWASP: How to do Content Security Policy (PDF)': 'https://owasp.org/www-pdf-archive/2019-02-22_-_How_do_I_Content_Security_Policy_-_Print.pdf', 'OWASP: Content Security Policy': 'https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/12-Test_for_Content_Security_Policy'}"
+        }
+      ],
+      "remediation_summary": {
+        "Wapiti: Content Security Policy Configuration": [
+          "Solution: Configuring Content Security Policy involves adding the Content-Security-Policy HTTP header to a web page and giving it values to control what resources the user agent is allowed to load for that page.\nReference: {'Mozilla: Content Security Policy (CSP)': 'https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP', 'OWASP: Content Security Policy Cheat Sheet': 'https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html', 'OWASP: How to do Content Security Policy (PDF)': 'https://owasp.org/www-pdf-archive/2019-02-22_-_How_do_I_Content_Security_Policy_-_Print.pdf', 'OWASP: Content Security Policy': 'https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/12-Test_for_Content_Security_Policy'}"
+        ]
+      }
+    }
+  },
+  {
+    "target": "webgoat",
+    "description": "OWASP WebGoat - Learning Web Security",
+    "url": "http://172.20.0.7:8080",
+    "findings": {
+      "total_vulnerabilities": 3,
+      "severity_breakdown": {
+        "Unknown": 3
+      },
+      "detailed_findings": [
+        {
+          "vulnerability_type": "Wapiti: Content Security Policy Configuration",
+          "severity": "Unknown",
+          "description": "URL: /\nParameter: \nDescription: Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks.\nDetails: CSP is not set\n\nHTTP Request:\nGET / HTTP/1.1\nhost: 172.20.0.7:8080\nconnection: keep-alive\nuser-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0\naccept-language: en-US\naccept-encoding: gzip, deflate, br\naccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\n\nCURL Command:\ncurl \"http://172.20.0.7:8080/\"",
+          "affected_component": "/",
+          "remediation": "Solution: Configuring Content Security Policy involves adding the Content-Security-Policy HTTP header to a web page and giving it values to control what resources the user agent is allowed to load for that page.\nReference: {'Mozilla: Content Security Policy (CSP)': 'https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP', 'OWASP: Content Security Policy Cheat Sheet': 'https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html', 'OWASP: How to do Content Security Policy (PDF)': 'https://owasp.org/www-pdf-archive/2019-02-22_-_How_do_I_Content_Security_Policy_-_Print.pdf', 'OWASP: Content Security Policy': 'https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/12-Test_for_Content_Security_Policy'}"
+        },
+        {
+          "vulnerability_type": "Wapiti: Clickjacking Protection",
+          "severity": "Unknown",
+          "description": "URL: /\nParameter: \nDescription: Clickjacking is a technique that tricks a user into clicking something different from what the user perceives, potentially revealing confidential information or taking control of their computer.\nDetails: X-Frame-Options is not set\n\nHTTP Request:\nGET / HTTP/1.1\nhost: 172.20.0.7:8080\nconnection: keep-alive\nuser-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0\naccept-language: en-US\naccept-encoding: gzip, deflate, br\naccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\n\nCURL Command:\ncurl \"http://172.20.0.7:8080/\"",
+          "affected_component": "/",
+          "remediation": "Solution: Implement X-Frame-Options or Content Security Policy (CSP) frame-ancestors directive.\nReference: {'OWASP: Clickjacking': 'https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/09-Testing_for_Clickjacking', 'KeyCDN: Preventing Clickjacking': 'https://www.keycdn.com/support/prevent-clickjacking'}"
+        },
+        {
+          "vulnerability_type": "Wapiti: MIME Type Confusion",
+          "severity": "Unknown",
+          "description": "URL: /\nParameter: \nDescription: MIME type confusion can occur when a browser interprets files as a different type than intended, which could lead to security vulnerabilities like cross-site scripting (XSS).\nDetails: X-Content-Type-Options is not set\n\nHTTP Request:\nGET / HTTP/1.1\nhost: 172.20.0.7:8080\nconnection: keep-alive\nuser-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0\naccept-language: en-US\naccept-encoding: gzip, deflate, br\naccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\n\nCURL Command:\ncurl \"http://172.20.0.7:8080/\"",
+          "affected_component": "/",
+          "remediation": "Solution: Implement X-Content-Type-Options to prevent MIME type sniffing.\nReference: {'OWASP: MIME Sniffing': 'https://owasp.org/www-community/attacks/MIME_sniffing', 'KeyCDN: Preventing MIME Type Sniffing': 'https://www.keycdn.com/support/preventing-mime-type-sniffing'}"
+        }
+      ],
+      "remediation_summary": {
+        "Wapiti: Content Security Policy Configuration": [
+          "Solution: Configuring Content Security Policy involves adding the Content-Security-Policy HTTP header to a web page and giving it values to control what resources the user agent is allowed to load for that page.\nReference: {'Mozilla: Content Security Policy (CSP)': 'https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP', 'OWASP: Content Security Policy Cheat Sheet': 'https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html', 'OWASP: How to do Content Security Policy (PDF)': 'https://owasp.org/www-pdf-archive/2019-02-22_-_How_do_I_Content_Security_Policy_-_Print.pdf', 'OWASP: Content Security Policy': 'https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/12-Test_for_Content_Security_Policy'}"
+        ],
+        "Wapiti: Clickjacking Protection": [
+          "Solution: Implement X-Frame-Options or Content Security Policy (CSP) frame-ancestors directive.\nReference: {'OWASP: Clickjacking': 'https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/09-Testing_for_Clickjacking', 'KeyCDN: Preventing Clickjacking': 'https://www.keycdn.com/support/prevent-clickjacking'}"
+        ],
+        "Wapiti: MIME Type Confusion": [
+          "Solution: Implement X-Content-Type-Options to prevent MIME type sniffing.\nReference: {'OWASP: MIME Sniffing': 'https://owasp.org/www-community/attacks/MIME_sniffing', 'KeyCDN: Preventing MIME Type Sniffing': 'https://www.keycdn.com/support/preventing-mime-type-sniffing'}"
+        ]
+      }
+    }
+  },
+  {
+    "target": "vuln_python_app",
+    "description": "Vulnerable Python Application",
+    "url": "http://172.20.0.3:5050",
+    "findings": {
+      "total_vulnerabilities": 22,
+      "severity_breakdown": {
+        "High": 7,
+        "Medium": 10,
+        "Low": 4,
+        "Critical": 1
+      },
+      "detailed_findings": [
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "High",
+          "description": "Vulnerable package: cryptography==3.3.2\nVulnerability ID: GHSA-x4qr-2fvf-3mr5\nVulnerable OpenSSL included in cryptography wheels\n\nCVSS Score: 7.4 (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H)\n\nReferences:\nNo references provided",
+          "affected_component": "python:cryptography==3.3.2",
+          "remediation": "Update cryptography to version 39.0.1 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "High",
+          "description": "Vulnerable package: cryptography==3.3.2\nVulnerability ID: GHSA-3ww4-gg4f-jr7f\nPython Cryptography package vulnerable to Bleichenbacher timing oracle attack\n\nCVSS Score: 7.5 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N)\n\nReferences:\nNo references provided",
+          "affected_component": "python:cryptography==3.3.2",
+          "remediation": "Update cryptography to version 42.0.0 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Medium",
+          "description": "Vulnerable package: cryptography==3.3.2\nVulnerability ID: GHSA-w7pp-m8wf-vj6r\nCipher.update_into can corrupt memory if passed an immutable python object as the outbuf\n\nCVSS Score: 6.5 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L)\n\nReferences:\nNo references provided",
+          "affected_component": "python:cryptography==3.3.2",
+          "remediation": "Update cryptography to version 39.0.1 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Medium",
+          "description": "Vulnerable package: cryptography==3.3.2\nVulnerability ID: GHSA-jfhm-5ghh-2f97\ncryptography vulnerable to NULL-dereference when loading PKCS7 certificates\n\nCVSS Score: 5.9 (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H)\n\nReferences:\nNo references provided",
+          "affected_component": "python:cryptography==3.3.2",
+          "remediation": "Update cryptography to version 41.0.6 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Medium",
+          "description": "Vulnerable package: cryptography==3.3.2\nVulnerability ID: GHSA-9v9h-cgj8-h64p\nNull pointer dereference in PKCS12 parsing\n\nCVSS Score: 5.5 (CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H)\n\nReferences:\nNo references provided",
+          "affected_component": "python:cryptography==3.3.2",
+          "remediation": "Update cryptography to version 42.0.2 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Low",
+          "description": "Vulnerable package: cryptography==3.3.2\nVulnerability ID: GHSA-v8gr-m533-ghj9\nVulnerable OpenSSL included in cryptography wheels\n\n\nReferences:\nNo references provided",
+          "affected_component": "python:cryptography==3.3.2",
+          "remediation": "Update cryptography to version 41.0.4 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Low",
+          "description": "Vulnerable package: cryptography==3.3.2\nVulnerability ID: GHSA-jm77-qphf-c4w8\npyca/cryptography's wheels include vulnerable OpenSSL\n\n\nReferences:\nNo references provided",
+          "affected_component": "python:cryptography==3.3.2",
+          "remediation": "Update cryptography to version 41.0.3 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Low",
+          "description": "Vulnerable package: cryptography==3.3.2\nVulnerability ID: GHSA-5cpq-8wj7-hf2v\nVulnerable OpenSSL included in cryptography wheels\n\n\nReferences:\nNo references provided",
+          "affected_component": "python:cryptography==3.3.2",
+          "remediation": "Update cryptography to version 41.0.0 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "High",
+          "description": "Vulnerable package: flask==2.0.1\nVulnerability ID: GHSA-m2qf-hxjv-5gpq\nFlask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header\n\nCVSS Score: 7.5 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N)\n\nReferences:\nNo references provided",
+          "affected_component": "python:flask==2.0.1",
+          "remediation": "Update flask to version 2.2.5 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Critical",
+          "description": "Vulnerable package: pyyaml==5.3.1\nVulnerability ID: GHSA-8q59-q68h-6hv4\nImproper Input Validation in PyYAML\n\nCVSS Score: 9.8 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H)\n\nReferences:\nNo references provided",
+          "affected_component": "python:pyyaml==5.3.1",
+          "remediation": "Update pyyaml to version 5.4 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Medium",
+          "description": "Vulnerable package: requests==2.25.1\nVulnerability ID: GHSA-j8r2-6x86-q33q\nUnintended leak of Proxy-Authorization header in requests\n\nCVSS Score: 6.1 (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N)\n\nReferences:\nNo references provided",
+          "affected_component": "python:requests==2.25.1",
+          "remediation": "Update requests to version 2.31.0 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Medium",
+          "description": "Vulnerable package: requests==2.25.1\nVulnerability ID: GHSA-9wx4-h78v-vm56\nRequests `Session` object does not verify requests after making first request with verify=False\n\nCVSS Score: 5.6 (CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N)\n\nReferences:\nNo references provided",
+          "affected_component": "python:requests==2.25.1",
+          "remediation": "Update requests to version 2.32.0 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "High",
+          "description": "Vulnerable package: urllib3==1.26.4\nVulnerability ID: GHSA-v845-jxx5-vc9f\n`Cookie` HTTP header isn't stripped on cross-origin redirects\n\nCVSS Score: 5.9 (CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N)\n\nReferences:\nNo references provided",
+          "affected_component": "python:urllib3==1.26.4",
+          "remediation": "Update urllib3 to version 1.26.17 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "High",
+          "description": "Vulnerable package: urllib3==1.26.4\nVulnerability ID: GHSA-q2q7-5pp4-w6pg\nCatastrophic backtracking in URL authority parser when passed URL containing many @ characters\n\nCVSS Score: 7.5 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H)\n\nReferences:\nNo references provided",
+          "affected_component": "python:urllib3==1.26.4",
+          "remediation": "Update urllib3 to version 1.26.5 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Medium",
+          "description": "Vulnerable package: urllib3==1.26.4\nVulnerability ID: GHSA-g4mx-q9vg-27p4\nurllib3's request body not stripped after redirect from 303 status changes request method to GET\n\nCVSS Score: 4.2 (CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N)\n\nReferences:\nNo references provided",
+          "affected_component": "python:urllib3==1.26.4",
+          "remediation": "Update urllib3 to version 1.26.18 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Medium",
+          "description": "Vulnerable package: urllib3==1.26.4\nVulnerability ID: GHSA-34jh-p97f-mpxf\nurllib3's Proxy-Authorization request header isn't stripped during cross-origin redirects\n\nCVSS Score: 4.4 (CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N)\n\nReferences:\nNo references provided",
+          "affected_component": "python:urllib3==1.26.4",
+          "remediation": "Update urllib3 to version 1.26.19 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "High",
+          "description": "Vulnerable package: werkzeug==2.0.1\nVulnerability ID: GHSA-xg9f-g7g7-2323\nHigh resource usage when parsing multipart form data with many fields\n\nCVSS Score: 7.5 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H)\n\nReferences:\nNo references provided",
+          "affected_component": "python:werkzeug==2.0.1",
+          "remediation": "Update werkzeug to version 2.2.3 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "High",
+          "description": "Vulnerable package: werkzeug==2.0.1\nVulnerability ID: GHSA-2g68-c3qc-8985\nWerkzeug debugger vulnerable to remote execution when interacting with attacker controlled domain\n\nCVSS Score: 7.5 (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H)\n\nReferences:\nNo references provided",
+          "affected_component": "python:werkzeug==2.0.1",
+          "remediation": "Update werkzeug to version 3.0.3 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Medium",
+          "description": "Vulnerable package: werkzeug==2.0.1\nVulnerability ID: GHSA-q34m-jh98-gwm2\nWerkzeug possible resource exhaustion when parsing file data in forms\n\nCVSS Score: 7.5 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H)\n\nReferences:\nNo references provided",
+          "affected_component": "python:werkzeug==2.0.1",
+          "remediation": "Update werkzeug to version 3.0.6 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Medium",
+          "description": "Vulnerable package: werkzeug==2.0.1\nVulnerability ID: GHSA-hrfv-mqp8-q5rw\nWerkzeug DoS: High resource usage when parsing multipart/form-data containing a large part with CR/LF character at the beginning\n\nCVSS Score: 5.7 (CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H)\n\nReferences:\nNo references provided",
+          "affected_component": "python:werkzeug==2.0.1",
+          "remediation": "Update werkzeug to version 2.3.8 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Medium",
+          "description": "Vulnerable package: werkzeug==2.0.1\nVulnerability ID: GHSA-f9vj-2wh5-fj8j\nWerkzeug safe_join not safe on Windows\n\n\nReferences:\nNo references provided",
+          "affected_component": "python:werkzeug==2.0.1",
+          "remediation": "Update werkzeug to version 3.0.6 or newer"
+        },
+        {
+          "vulnerability_type": "DependencyVulnerability",
+          "severity": "Low",
+          "description": "Vulnerable package: werkzeug==2.0.1\nVulnerability ID: GHSA-px8h-6qxv-m22q\nIncorrect parsing of nameless cookies leads to __Host- cookies bypass\n\nCVSS Score: 2.6 (CVSS:3.1/AV:A/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N)\n\nReferences:\nNo references provided",
+          "affected_component": "python:werkzeug==2.0.1",
+          "remediation": "Update werkzeug to version 2.2.3 or newer"
+        }
+      ],
+      "remediation_summary": {
+        "DependencyVulnerability": [
+          "Update cryptography to version 39.0.1 or newer",
+          "Update cryptography to version 42.0.0 or newer",
+          "Update cryptography to version 39.0.1 or newer",
+          "Update cryptography to version 41.0.6 or newer",
+          "Update cryptography to version 42.0.2 or newer",
+          "Update cryptography to version 41.0.4 or newer",
+          "Update cryptography to version 41.0.3 or newer",
+          "Update cryptography to version 41.0.0 or newer",
+          "Update flask to version 2.2.5 or newer",
+          "Update pyyaml to version 5.4 or newer",
+          "Update requests to version 2.31.0 or newer",
+          "Update requests to version 2.32.0 or newer",
+          "Update urllib3 to version 1.26.17 or newer",
+          "Update urllib3 to version 1.26.5 or newer",
+          "Update urllib3 to version 1.26.18 or newer",
+          "Update urllib3 to version 1.26.19 or newer",
+          "Update werkzeug to version 2.2.3 or newer",
+          "Update werkzeug to version 3.0.3 or newer",
+          "Update werkzeug to version 3.0.6 or newer",
+          "Update werkzeug to version 2.3.8 or newer",
+          "Update werkzeug to version 3.0.6 or newer",
+          "Update werkzeug to version 2.2.3 or newer"
+        ]
+      }
+    }
+  }
+]

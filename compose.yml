@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  # Vulnerability Scanner
+  scanner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./reports:/app/reports
+    ports:
+      - "8080:8080"
+    networks:
+      vulnnet:
+        ipv4_address: 172.20.0.6
+    depends_on:
+      - juice-shop
+      - webgoat
+      - vuln_python_app
+    # Add a healthcheck to ensure targets are up before scanning
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://172.20.0.2"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+  
+  # New modern vulnerable targets
+  juice-shop:
+    image: bkimminich/juice-shop
+    ports:
+      - "3000:3000"
+    networks:
+      vulnnet:
+        ipv4_address: 172.20.0.5
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  webgoat:
+    image: webgoat/webgoat
+    ports:
+      - "8082:8080"
+    networks:
+      vulnnet:
+        ipv4_address: 172.20.0.7
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+  
+  # Vulnerable Python Application
+  vuln_python_app:
+    build:
+      context: ./vuln_python_app
+      dockerfile: Dockerfile
+    ports:
+      - "5050:5050"  # Changed from 5000 to 5050
+    networks:
+      vulnnet:
+        ipv4_address: 172.20.0.3
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5050"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+networks:
+  vulnnet:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
